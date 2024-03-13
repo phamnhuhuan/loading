@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        color: #fff;
+        background-color: black;
+    }
+
+    .loader-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10000;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .loader-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .loader-container.fade-out {
+        opacity: 0;
+        animation: load linear 1s;
+    }
+
+    @keyframes load {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <h1>hu</h1>
+    <div class="loader-container">
+        <div class="imgloader"><img src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
+                alt=""></div>
+    </div>
+    <script>
+        function loader() {
+            document.querySelector('.loader-container').classList.add('fade-out');
+        }
+
+        function fadeOut() {
+            setInterval(loader, 1000);
+        }
+
+        window.onload = fadeOut;
+    </script>
+</body>
+
+</html>

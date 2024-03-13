@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cha{
+        opacity: 0.4;
+    }
+    .cha.active{
+        opacity: 1;
+        color: aqua;
+    }
+    .con{
+        display: none;
+
+    }
+    .con.active{
+        display: block;
+    }
+    
+</style>
+<body>
+    
+       <div class="tabcha">
+        <div class="cha active"><a>h1</a></div>
+        <div class="cha"><a>h2</a></div>
+        <div class="cha"><a>h3</a></div>
+        <div class="cha"><a>h4</a></div>
+       </div>
+       <div class="tabcon">
+        <div class="con active"><h1>h1</h1></div>
+        <div class="con"><h1>h2</h1></div>
+        <div class="con"><h1>h3</h1></div>
+        <div class="con"><h1>h4</h1></div>
+       </div>
+    
+    <script>
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+
+        const tabs = $$(".cha");
+        const panes = $$(".con");
+        tabs.forEach((tab, index) => {
+            const pane = panes[index];
+
+            tab.onclick = function () {
+                $(".cha.active").classList.remove("active");
+                $(".con.active").classList.remove("active");
+                this.classList.add("active");
+                pane.classList.add("active");
+            };
+        });
+
+    </script>
+</body>
+</html>

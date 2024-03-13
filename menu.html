@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+    body{
+        background: url(logo.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 200vh;
+       
+    }
+    header{
+        width: 100%;
+        position: fixed;
+        transition: linear 1s;
+        padding: 2rem;
+    }
+    .fixed{
+        background-color: aliceblue;
+        
+        transition: linear 1s;
+        padding: 3rem;
+        
+    }
+    .fixed li{
+        color: red;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        gap:1rem;
+        
+
+    }
+    li{
+        color: white;
+    }
+   
+     
+</style>
+<body>
+    <header>
+        <ul>
+            <li>lohoo</li>
+            <li>lohoo</li>
+            <li>lohoo</li>
+            <li>lohoo</li>
+            <li>lohoo</li>
+            <li>lohoo</li>
+        </ul>
+    </header>
+    
+    <script>
+        window.addEventListener("scroll",function(){
+            document.querySelector('header').classList.toggle('fixed', window.scrollY>0)
+        })
+        
+    </script>
+</body>
+</html>
